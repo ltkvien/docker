@@ -1,6 +1,6 @@
 # DOCKER COMMANDS
 
-## Docker Client Image Commands
+## Docker basic command
 ### docker version
 docker version
 
@@ -50,9 +50,16 @@ docker tag 425d9581f8ba  p1docker-clamav:alpine
 # docker run
 docker run --name {container_name} -p {host_port}:{container_port} -v {/host_path}:{/container_path} -it {image_name} /bin/bash
 
+docker run [image name]
+
+### docker run with mount volume
+docker run --volume /volume_name [image_name] bash
+
 docker run -p 8080:5000 -v $(pwd):/app [image_name]
 
-docker run [image name]
+docker run -p 8080:3000 -v [container_volume] node
+
+docker run -p 8080:3000 -v /var/www node
 
 # docker run interactive mode
 docker run --interactive --tty ubuntu bash
@@ -66,8 +73,8 @@ docker run [image_name] -it bash
 ### docker run 
 docker run -d -p 3310:3310 ltkvien.azurecr.io/docker-clamav:alpine 
 
-### docker run with mount volume
-docker run --volume /volume_name [image_name] bash
+#### docker inspect
+docker inspect [mycontainer]
 
 ### docker login
 docker login docker.io
@@ -152,7 +159,11 @@ docker-compose build
 ## Docker Machine Commands
 
 docker-machine start [machine name]
+
 docker-machine stop [machine name]
+
 docker-machine env [machine name]
+
 docker-machine ip [machine name]
+
 docker-machine status [machine name]
