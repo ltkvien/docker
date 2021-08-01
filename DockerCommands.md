@@ -2,7 +2,9 @@
 
 ### Docker Client Image Commands
 ## docker version
+#
 docker version
+#
 docker info
 
 ## docker commands help page
@@ -122,8 +124,3 @@ docker-machine stop [machine name]
 docker-machine env [machine name]
 docker-machine ip [machine name]
 docker-machine status [machine name]
-
-
-
-
-
